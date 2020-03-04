@@ -1,9 +1,9 @@
 <html>
     <head>
-          <?php $this->load->view('header_administrativo');?>
+          <?php $this->load->view('header/header_administrativo');?>
        
     </head>
-     <?php $this->load->view('sidenav_administrativo');?>
+     <?php $this->load->view('administrativo/sidenav');?>
     <body>
         <div id="app">
         <div class="row">
@@ -134,7 +134,7 @@
                                                     <div class="file-path-wrapper">
                                                       <input class="file-path validate" type="text" v-model="editarModal.imagen">
                                                     </div>
-                                                      <img id="blah" v-bind:src="'./uploads/' + editarModal.imagen"/>
+                                                      
                                                   </div>
                                                 </div>
                                             </div>
@@ -156,6 +156,7 @@
 
 
                 </div>
-        
+                <?php $this->load->view('footer/footer_administrativo');?>
+                <script src="<?= base_url() ?>assets/js/servicio.js" type="text/javascript"></script>
     </body>
 </html>
