@@ -5,6 +5,7 @@
     </head>
      <?php $this->load->view('administrativo/sidenav');?>
     <body>
+        
         <div id="app">
         <div class="row">
                 <div class="col l5 m12 s12" style="margin-top: 5%">
@@ -13,7 +14,7 @@
                         <div class="row">
                           <div class="col l12 s12 m6">
                               <h4 class="black-text" style="font-weight: 900">Agregar Servicio</h4>
-
+                              
                               <div class="input-field col s12 l6">
                                 <i class="material-icons prefix">comment</i>
                                 <input id="nombre_servicio" name="nombre_servicio" type="text" data-length="40" v-model="nombre_servicio">

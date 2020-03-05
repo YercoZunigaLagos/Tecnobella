@@ -155,8 +155,8 @@ class Welcome extends CI_Controller {
 
 
             if ($user) {
-
-                $ruta = site_url() . "/Vistas/Servicios";
+                
+                $ruta = site_url() . "Servicios";
                 $res = "valido";
                 $this->session->set_userdata("admin", $user[0]);
 
