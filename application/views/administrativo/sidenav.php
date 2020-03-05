@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div></li>
-
+                        
 
 
                         <li><a class="">Scripts</a></li>
@@ -44,7 +44,7 @@
                     <li><a class="waves-effect"  href="<?= site_url() ?>Perfiles"><i class="material-icons">show_chart</i>Perfiles</a></li>
                     <li><a class="waves-effect"  href="<?= site_url() ?>Usuarios"><i class="material-icons">local_grocery_store</i>Usuarios</a></li>
                     <?php if($this->session->userdata('admin')):?>
-                    <li><a class="waves-effect"  href="<?= site_url() ?>Desconectarse"><i class="material-icons">local_grocery_store</i>Desconectarse</a></li>
+                    <li><a class="waves-effect "  href="<?= base_url() ?>welcome/cerrar_sesion"><i class="material-icons red-text">power_settings_new</i>Desconectarse</a></li>
                     <?php else:?>
                         <?php redirect(site_url("Login"))?>
                     <?php endif;?>

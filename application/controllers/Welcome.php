@@ -169,5 +169,9 @@ class Welcome extends CI_Controller {
         }
         echo json_encode(array("value" => $res, "ruta" => $ruta));
     }
+    public function cerrar_sesion() {
+          $this->session->sess_destroy();
+           redirect(base_url());
+    }
 
 }
