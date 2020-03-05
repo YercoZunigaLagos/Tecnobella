@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Servicios'] = '/vistas/Servicios';
 $route['Perfiles'] = '/vistas/Perfiles';
 $route['Usuarios'] = '/vistas/Usuarios';
+$route['Login'] = '/vistas/Login';

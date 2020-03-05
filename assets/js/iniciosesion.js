@@ -17,21 +17,17 @@ new Vue({
     },
     methods: {
 
-        iniciarSesion: function () {
-
-            url = "http://localhost/Administrativo/welcome/inicioSesion";
+        iniciar_sesion: function () {
+            url = "http://localhost/Tecnobella/index.php/welcome/iniciar_sesion";
             param = new FormData();
             param.append("email_usuario", this.email_usuario);
             param.append("contraseña_usuario", this.contraseña_usuario);
-
-
             axios.post(url, param)
                     .then(res => {
 
                         if (res.data.ruta !== "") {
-                          console.log(res.data.ruta);
-                            window.location.href = res.data.ruta;
 
+                            window.location.href = res.data.ruta;
                         } else {
                             M.toast({html: res.data.value});
                         }
@@ -39,8 +35,7 @@ new Vue({
                     .catch(e => {
                         console.log(e);
                     });
-
-        }
+        },
 
 
 

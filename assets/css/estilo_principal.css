@@ -1,0 +1,72 @@
+#whatsapp{
+      height: 30px;
+      width: 30px;
+
+
+    }
+    #youtube{
+      height: 30px;
+      width: 30px;
+
+
+    }
+    #nav_secundario nav{
+
+      position: relative;
+      height: 30px;
+      line-height: 30px;
+      display: block;
+
+    }
+    #nav_secundario a{
+      color:#999999;
+    }
+    .navbar-fixed nav {
+
+    }
+    #nav_principal img{
+      height:90%;
+      width:auto;
+      margin-top: 5px;
+
+    }
+    #nav_principal nav{
+      height: 175px;
+      line-height: 175px;
+      background-color: #6323c4;
+    }
+    @media only screen and (min-width: 200px){
+      #nav_principal nav,#nav_principal nav .nav-wrapper i,#nav_principal nav a.button-collapse,#nav_principal nav a.button-collapse i {
+            height: 175px;
+            line-height: 175px;
+        }
+    }
+    .dropdown-content {
+
+      background-color: #db1181;
+
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    }
+    .card {
+
+    position: relative
+
+    width : 320px;
+
+    height: auto;
+
+    overflow: hidden;
+
+    }
+    .card-action a {
+      background-color: #04247d ;
+    }
+
+    .page-footer{
+      background-color: #6323c4;
+    }
+    .container{
+      width: 95%;
+      margin: auto;
+    }

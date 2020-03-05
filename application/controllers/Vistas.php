@@ -23,13 +23,16 @@ class Vistas extends CI_Controller {
 
     }
     public function Servicios(){
-          $this->load->view("servicio0");
+          $this->load->view("administrativo/servicio");
     }
     public function Perfiles(){
           $this->load->view("perfiles");
     }
-		public function Usuarios(){
-          $this->load->view("usuarios");
+    public function Usuarios(){
+          $this->load->view("administrativo/usuario");
+    }
+    public function Login(){
+          $this->load->view("administrativo/login");
     }
 
 

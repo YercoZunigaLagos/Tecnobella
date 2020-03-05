@@ -158,5 +158,32 @@
                 </div>
                 <?php $this->load->view('footer/footer_administrativo');?>
                 <script src="<?= base_url() ?>assets/js/servicio.js" type="text/javascript"></script>
+                <script type="text/javascript">
+
+          $(document).ready(function(){
+              $('select').formSelect();
+              $('.sidenav').sidenav();
+              $('.materialboxed').materialbox();
+              $('.collapsible').collapsible();
+              $('.dropdown-trigger').dropdown({
+                hover: true,
+                coverTrigger: false
+              });
+
+            });
+
+            function readURL(input) {
+              if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+                  reader.onload = function (e) {
+                    $('#blah')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(200);
+                  };
+                  reader.readAsDataURL(input.files[0]);
+                }
+              }
+       </script>
     </body>
 </html>
