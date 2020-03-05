@@ -151,7 +151,7 @@ class Welcome extends CI_Controller {
         if (isset($email_usuario) && isset($contraseña_usuario)) {
 
             $user = $this->Modelo->iniciarSesion($email_usuario, sha1(md5($contraseña_usuario)));
-
+            
 
 
             if ($user) {
