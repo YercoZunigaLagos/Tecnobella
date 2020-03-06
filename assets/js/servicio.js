@@ -92,9 +92,16 @@ var app = new Vue({
                 });
     },
     cargarModal: function (s) {
-        console.log(s);
+        
+        let object = Object.entries(s);
+        this.Modal = s;
+        
         this.editarModal = s;
+        
+        console.log(this.Modal);
         //open modal
+        
+        
 
         var elem = document.querySelector('.modal');
         var instance = M.Modal.getInstance(elem);
