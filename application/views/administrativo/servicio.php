@@ -129,9 +129,7 @@
                                         <div class="input-field col s12 l6">
                                             <i class="material-icons prefix">attach_money</i>
                                             <input id="valor" name="valor" type="number" v-model="editarModal.valor">
-
                                         </div>
-
                                         <div class="input-field col s12" >
                                             <i class="material-icons prefix">subject</i>
                                             <textarea  id="descripcion2" name="descripcion" data-length="250" v-model="editarModal.descripcion"></textarea>
