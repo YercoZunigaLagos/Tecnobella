@@ -10,5 +10,5 @@
       <!-- Vue 2.6.11 -->
       <script src="https://unpkg.com/vue@latest"></script>
       <!-- Vue dirigido al select -->
-      <script src="https://unpkg.com/vue-select@latest"></script>
+      <script src="https://unpkg.com/vue-select@3.0.0"></script>
     

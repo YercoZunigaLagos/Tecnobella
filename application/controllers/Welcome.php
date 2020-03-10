@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('cliente/principal');
+        $this->load->view('administrativo/login');
     }
 
     function insertar_servicio() {
@@ -142,6 +142,7 @@ class Welcome extends CI_Controller {
             echo "vacio";
         }
     }
+
     /////////// Iniciar sesion ///////////////
 
     public function iniciar_sesion() {
@@ -151,27 +152,44 @@ class Welcome extends CI_Controller {
         if (isset($email_usuario) && isset($contraseña_usuario)) {
 
             $user = $this->Modelo->iniciarSesion($email_usuario, sha1(md5($contraseña_usuario)));
-            
-
-
+            $usuario_conectado = json_decode(json_encode($user), false);
+            $vistas = $this->Modelo->vistas_usuario($usuario_conectado[0]->rol_id_rol);
+            $vistas_asociadas = json_decode(json_encode($vistas), false);
             if ($user) {
                 
                 $ruta = site_url() . "Servicios";
                 $res = "valido";
-                $this->session->set_userdata("admin", $user[0]);
-
-                
+                $arraydata = array(
+                    'id_usuario' => $usuario_conectado[0]->id_usuario,
+                    'nombre_usuario' => $usuario_conectado[0]->nombre_usuario,
+                    'gmail_usuario' => $usuario_conectado[0]->email_usuario,
+                    'vista_perfil' => $vistas_asociadas[0]->vista_perfil,
+                    'vista_servicios' => $vistas_asociadas[0]->vista_servicios,
+                    'vista_egreso_fijo' => $vistas_asociadas[0]->vista_egreso_fijo,
+                    'vista_egreso_variable' => $vistas_asociadas[0]->vista_egreso_variable,
+                    'vista_egreso_cajachica' => $vistas_asociadas[0]->vista_egreso_cajachica,
+                    'vista_ventas' => $vistas_asociadas[0]->vista_ventas,
+                    'vista_cliente' => $vistas_asociadas[0]->vista_cliente,
+                    'vista_inventario' => $vistas_asociadas[0]->vista_inventario,
+                    'vista_usuario' => $vistas_asociadas[0]->vista_usuario,
+                    
+                );
+                //echo $usuario_conectado[0]->id_usuario;
+                $this->session->set_userdata($arraydata);
             } else {
+                
                 $res = "invalido";
             }
         } else {
+            
             $res = "error de parametros";
         }
         echo json_encode(array("value" => $res, "ruta" => $ruta));
     }
+
     public function cerrar_sesion() {
-          $this->session->sess_destroy();
-           redirect(base_url());
+        $this->session->sess_destroy();
+        redirect(base_url());
     }
 
 }

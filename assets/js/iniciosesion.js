@@ -26,8 +26,9 @@ new Vue({
                     .then(res => {
 
                         if (res.data.ruta !== "") {
-
+                            
                             window.location.href = res.data.ruta;
+                            
                         } else {
                             M.toast({html: res.data.value});
                         }

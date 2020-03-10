@@ -82,8 +82,24 @@
                 </div>
                 <div class="col l7 m12 s12" style="margin-top: 5%">
                     <div class="card-panel z-depth-3">
+                        
+                        
                         <h4 class="black-text" style="font-weight: 900">Perfiles de Usuario</h4>
-                        <table class="bordered highlight" id="tablePerfil">
+                        <div class="center " id="circulo">
+                            <div class="preloader-wrapper big active">
+                                <div class="spinner-layer spinner-blue-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div><div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div><div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide" id="contenido">
+                            <table class="bordered highlight" id="tablePerfil">
                             <tr>
                                 <th class="hide">ID</th>
                                 <th>Imagen</th>
@@ -113,6 +129,8 @@
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
+                        
 
                         <div id="modal1" class="modal">
                             <div class="modal-content">
@@ -151,7 +169,7 @@
                                             <div class="file-field input-field">
                                                 <div class="btn">
                                                     <span>Imagen</span>
-                                                    <input type="file" id="user_file" ref="user_file" onchange="readURL(this);" v-on:change="handleFileUpload()">
+                                                    <input type="file" id="user_file2" ref="user_file" onchange="readURL(this);" v-on:change="handleFileUpload()">
                                                 </div>
                                                 <div class="file-path-wrapper">
                                                     <input class="file-path validate" type="text" v-model="editarModal.imagen">
@@ -209,6 +227,17 @@
                                                                 reader.readAsDataURL(input.files[0]);
                                                             }
                                                         }
+        </script>
+        <script>
+            window.addEventListener('load', () => {
+            setTimeout(carga, 200);
+
+            function carga() {
+                document.getElementById('circulo').className = 'hide';
+                document.getElementById('contenido').className = 'center animated fadeIn';
+                }
+            }
+            )
         </script>
     </body>
 </html>
