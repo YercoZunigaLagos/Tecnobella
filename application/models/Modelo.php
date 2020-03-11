@@ -16,7 +16,7 @@ class Modelo extends CI_Model {
     }
 
     public function joinServicios() {
-        $sql = "select servicio.id_servicio, servicio.nombre_servicio,servicio.valor,servicio.descripcion, servicio.imagen, GROUP_CONCAT(distinct zona.nombre_zona order by zona.nombre_zona asc separator ', ') as nombre_zona FROM servicio inner JOIN zona_servicio on zona_servicio.fk_id_servicio = servicio.id_servicio inner JOIN zona on zona.id_zona = zona_servicio.fk_id_zona GROUP BY servicio.id_servicio";
+        $sql = "select servicio.id_servicio, servicio.nombre_servicio, servicio.genero ,servicio.valor,servicio.descripcion, servicio.imagen, GROUP_CONCAT(distinct zona.nombre_zona order by zona.nombre_zona asc separator ', ') as nombre_zona FROM servicio inner JOIN zona_servicio on zona_servicio.fk_id_servicio = servicio.id_servicio inner JOIN zona on zona.id_zona = zona_servicio.fk_id_zona GROUP BY servicio.id_servicio";
         return $this->db->query($sql)->result();
     }
 

@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('administrativo/login');
+        $this->load->view('cliente/principal');
     }
 
     function insertar_servicio() {

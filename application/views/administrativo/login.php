@@ -100,7 +100,7 @@
 
         <script>
             window.addEventListener('load', () => {
-            setTimeout(carga, 1000);
+            setTimeout(carga, 600);
 
             function carga() {
                 document.getElementById('circulo').className = 'hide';

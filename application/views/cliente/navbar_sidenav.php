@@ -6,7 +6,7 @@
 
 
               <ul class="left">
-                <img src="<?=base_url() ?>assets/img/whatsapp_icon.png" class="left" id="whatsapp"/><li><a href="sass.html" >Contacto Whatsapp: +56958635081</a></li>
+                <img src="<?=base_url() ?>assets/img/whatsapp_icon.png" class="left" id="whatsapp"/><li><a href="https://api.whatsapp.com/send?phone=+56958635081">Envíanos un mensaje de WhatsApp</a></li>
 
 
 

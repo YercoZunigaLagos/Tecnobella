@@ -84,7 +84,7 @@
                     <div class="card-panel z-depth-3">
                         
                         
-                        <h4 class="black-text" style="font-weight: 900">Perfiles de Usuario</h4>
+                        <h4 class="black-text" style="font-weight: 900">Servicios</h4>
                         <div class="center " id="circulo">
                             <div class="preloader-wrapper big active">
                                 <div class="spinner-layer spinner-blue-only">
@@ -102,13 +102,14 @@
                             <table class="bordered highlight" id="tablePerfil">
                             <tr>
                                 <th class="hide">ID</th>
-                                <th>Imagen</th>
-                                <th>Servicio</th>
-                                <th>Valor</th>
-                                <th>Descripcion</th>
-                                <th>Zonas</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
+                                <th class="center">Imagen</th>
+                                <th class="center">Servicio</th>
+                                <th class="center">Zonas</th>
+                                <th class="center">Genero</th>
+                                <th class="center">Valor</th>
+                                <th class="center">Descripcion</th>      
+                                <th class="center">Editar</th>
+                                <th class="center">Eliminar</th>
                             </tr>
                             <tbody>
                                 <tr v-for="s in servicio">
@@ -117,9 +118,11 @@
                                         <img v-bind:src="'./uploads/' + s.imagen" width="100px" height="100px" class="circle" />
                                     </td>
                                     <td>{{s.nombre_servicio}}</td>
+                                    <td>{{s.nombre_zona}}</td>
+                                    <td>{{s.genero}}</td>
                                     <td>{{s.valor}}</td>
                                     <td>{{s.descripcion}}</td>
-                                    <td>{{s.nombre_zona}}</td>
+                                    
                                     <td>
                                         <button class="btn-floating yellow" @click="cargarModal(s)"><i class="material-icons">edit</i></button>
                                     </td>

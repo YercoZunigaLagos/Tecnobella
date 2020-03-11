@@ -1,162 +1,217 @@
+<!DOCTYPE html>
 <html>
+
     <head>
-          <?php $this->load->view('header/header_administrativo');?>
-       
+        <?php $this->load->view('header/header_administrativo'); ?>
+
     </head>
-     <?php $this->load->view('administrativo/sidenav');?>
-<body>
-      <div id="app">
-        <div class="row">
-                <div class="col l5 m12 s12" style="margin-top: 5%">
-                    <div class="card-panel z-depth-3">
-                      <div class="row">
-                        <h4 class="black-text" style="font-weight: 900">Agregar Rol</h4>
-                        <div class="row">
-                          <div class="col l6 s12 m6">
-                            <div class="input-field col s12 l12">
-                              <i class="material-icons prefix">comment</i>
-                              <input id="nombre_usuario" name="nombre_usuario" type="text" data-length="40" v-model="nombre_usuario">
-                              <label for="nombre_usuario">Nombre</label>
+
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v18/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -moz-font-feature-settings: 'liga';
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .middle-indicator {
+            position: absolute;
+            top: 50%;
+        }
+
+        .middle-indicator-text {
+            font-size: 4.2rem;
+        }
+
+        a.middle-indicator-text {
+            color: white !important;
+        }
+
+        .content-indicator {
+            width: 64px;
+            height: 64px;
+            background: none;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+        }
+
+        .indicators {
+            visibility: hidden;
+        }
+    </style>
+
+
+    <body>
+        <div id="app">
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div id="carouselContainer" class="container">
+                        <div class="carousel carousel-slider center " data-indicators="true">
+                            <div class="carousel-fixed-item center middle-indicator">
+                                <div class="left">
+                                    <a href="#carouselContainer" onclick="movePrevCarousel()" class="middle-indicator-text waves-effect waves-light content-indicator"><i
+                                            class="material-icons left  middle-indicator-text">chevron_left</i></a>
+                                </div>
+
+                                <div class="right">
+                                    <a href="#carouselContainer" onclick="moveNextCarousel()" class="middle-indicator-text waves-effect waves-light content-indicator"><i
+                                            class="material-icons right middle-indicator-text">chevron_right</i></a>
+                                </div>
                             </div>
-                            <div class="input-field col s12 l12">
-                              <i class="material-icons prefix">comment</i>
-                              <input id="apellido_usuario" name="apellido_usuario" type="text" data-length="40" v-model="apellido_usuario">
-                              <label for="apellido_usuario">Apellido</label>
+                            <div class="carousel-item red white-text" href="#one!">
+                                <h2>First Panel</h2>
+                                <p class="white-text">This is your first panel</p>
                             </div>
-                              <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">comment</i>
-                                <input id="email_usuario" name="email_usuario" type="text" data-length="40" v-model="email_usuario">
-                                <label for="email_usuario">Email de usuario</label>
-                              </div>
-                              <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">comment</i>
-                                <input id="contraseña_usuario" name="contraseña_usuario" type="text" data-length="40" v-model="contraseña_usuario">
-                                <label for="contraseña_usuario">Contraseña</label>
-                              </div>
-                              <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">comment</i>
-                                <input id="contraseña" name="contraseña" type="text" data-length="40" v-model="contraseña">
-                                <label for="contraseña">Confirme Contraseña</label>
-                              </div>
-                          </div>
-                          <div class="col l6 s12 m6">
-
-                            <div class="col s12 l12 right">
-                              <v-select id="nombre_vista" label="nombre_vista" v-model="selecte" :options="vista" placeholder="Seleccione la(s) vista(s)"></v-select>
-                              <label for="nombre_vista">Seleccione la(s) vista(s)</label>
-                             </div>
-
-                             <div class="input-field col l12 m12 s12">
-
-
-                               <v-select id="nombre_subrol" label="nombre_subrol" :options="subrol" v-model="selecte2" placeholder="Subrol de administrador?"> </v-select>
-
-
-
-
-                             </div>
-                          </div>
+                            <div class="carousel-item amber white-text" href="#two!">
+                                <h2>Second Panel</h2>
+                                <p class="white-text">This is your second panel</p>
+                            </div>
+                            <div class="carousel-item green white-text" href="#three!">
+                                <h2>Third Panel</h2>
+                                <p class="white-text">This is your third panel</p>
+                            </div>
+                            <div class="carousel-item blue white-text" href="#four!">
+                                <h2>Fourth Panel</h2>
+                                <p class="white-text">This is your fourth panel</p>
+                            </div>
                         </div>
+                    </div>
 
 
-
-
-
-
-                            <button class="btn waves-effect waves-light right" v-on:click="submitFile()">Agregar Rol
-                              <i class="material-icons right">add</i>
-                            </button>
-                          </div>
-                          <br>
-                        </div>
-                      </div>
-                      <div class="col l7 m12 s12" style="margin-top: 5%">
-                          <div class="card-panel z-depth-3">
-                              <h4 class="black-text" style="font-weight: 900">Roles en el sistema</h4>
-                              <table class="bordered highlight" id="tablePerfil">
-                                <tr>
-                                  <th class="hide">ID</th>
-                                  <th>Nombre</th>
-                                  <th>Vistas Asociadas</th>
-                                  <th>Editar</th>
-                                  <th>Eliminar</th>
-                                </tr>
-                                  <tbody>
-                                    <tr v-for="r in roles">
-                                        <td class="hide">{{r.id_rol}}</td>
-
-                                        <td>{{r.nombre_rol}}</td>
-                                        <td>{{r.nombre_vista}}</td>
-
-                                        <td>
-                                          <button class="btn-floating yellow" @click="cargarModal(r)"><i class="material-icons">edit</i></button>
-                                        </td>
-                                        <td>
-                                          <button class="btn-floating red" @click="eliminar_servicio(s)"><i class="material-icons">delete</i></button>
-                                        </td>
-                                    </tr>
-                                  </tbody>
-                              </table>
-                              <div id="modal1" class="modal">
-                                      <div class="modal-content">
-                                          <input class="hide" id="nombre_rol" name="nombre_rol" type="text" data-length="40" v-model="Modal.id_rol">
-                                          <div class="row">
-                                            <div class="col l6">
-                                              <div class="row">
-                                                <div class="col l12 s12 m6">
-                                                    <h4 class="black-text" style="font-weight: 900">Agregar Rol</h4>
-                                                    <div class="input-field col s12 l12">
-                                                      <i class="material-icons prefix valign-wrapper">comment</i>
-                                                      <input id="nombre_rol" name="nombre_rol" type="text" data-length="40" v-model="Modal.nombre_rol">
-
-                                                    </div>
-                                                </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="col l12 s12 m6 valign-wrapper">
-                                                    <div class="col l2">
-                                                      <i class="material-icons prefix center Small">add_box</i>
-                                                    </div>
-                                                    <div class="input-field col s12 l10">
-
-                                                        <v-select id="nombre_vista" multiple label="nombre_vista" v-model="selecte" :options="vista" placeholder="Seleccione la(s) vista(s)"></v-select>
-                                                    </div>
-                                                </div>
-                                              </div>
-
-                                            </div>
-                                          </div>
-
-
-                                              <button class="btn" @click="actualizarMa()">
-                                                  Actualizar
-                                              </button>
-
-                                      </div>
-                                  </div>
-                          </div>
-                      </div>
+                </div>
+            </div>
+            <div class="container section">
+                <div class="row">
+                    <div class="col l4">
 
                     </div>
+                    <div class="col l4">
+                        <h3 class="center">Tratamientos Populares</h3>
+                        <hr>
+                    </div>
+                    <div class="col l4">
+
+                    </div>
+
+
                 </div>
-    <?php $this->load->view('footer/footer_administrativo');?>
-                <script src="<?= base_url() ?>assets/js/servicio.js" type="text/javascript"></script>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l4 "v-for="s in servicio.slice(0,6)">
+                        <div class="card large">
+                            <div class="card-image">
+                                <img id="img-zoom" v-bind:src="'./uploads/' + s.imagen" alt="" class="materialboxed responsive-img" />
+
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">{{s.nombre_servicio}}<i class="material-icons right">info</i></span>
+                                <span>Precio: ${{s.valor}}</span>
+                            </div>
+
+                            <div class="card-action right">
+                                <a class="waves-effect waves-light btn"><i class="material-icons left">add_shopping_cart</i>COMPRAR</a>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">{{s.nombre_servicio}}<i class="material-icons right">close</i></span>
+                                <p>{{s.descripcion}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
-      <script type="text/javascript">
 
-          $(document).ready(function(){
-              $('select').formSelect();
-              $('.sidenav').sidenav();
-              $('.materialboxed').materialbox();
-              $('.collapsible').collapsible();
-              $('.dropdown-trigger').dropdown({
-                hover: true,
-                coverTrigger: false
-              });
+        <div class="fixed-action-btn"><a class="btn-floating btn-large red" href="#home" target="_blank"><i class="large material-icons">arrow_upward</i></a></div>
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
 
-            });
+                    <div class="col l4  s12">
+                        <h5 class="white-text">TecnoBella</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Nosotros</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Direccion</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Horario de Atención</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l4 offset-l4 s12 ">
 
-       </script>
-  </body>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Blog</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Testimonios</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Preguntas Frecuentes</a></li>
+                            <li></li>
+                            <li>
+                                <img id="imagen2" src="<?= base_url() ?>assets/img/formas-pago.png" alt="" class="responsive-img right" height="100px" width="100px">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 Copyright
+
+                </div>
+            </div>
+        </footer>
+
+        <!--JavaScript at end of body for optimized loading-->
+
+
+        <?php $this->load->view('footer/footer_administrativo'); ?>
+
+
+        <script src="<?= base_url() ?>assets/js/servicio.js" type="text/javascript"></script>
+        <script>
+           document.addEventListener('DOMContentLoaded', function () {
+    var carouselElems = document.querySelector('.carousel.carousel-slider');
+        var carouselInstance = M.Carousel.init(carouselElems, {
+            fullWidth: true,
+            indicators: true
+        });
+    });
+    function moveNextCarousel() {
+        var elems = document.querySelector('.carousel.carousel-slider');
+        var moveRight = M.Carousel.getInstance(elems);
+        moveRight.next(1);
+    }
+    function movePrevCarousel() {
+        var elems = document.querySelector('.carousel.carousel-slider');
+        var moveLeft = M.Carousel.getInstance(elems);
+        moveLeft.prev(1);
+    }
+
+    
+   
+        </script>
+        <script>
+        
+        </script>
+    </body>
 </html>

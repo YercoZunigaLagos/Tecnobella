@@ -74,7 +74,7 @@ var app = new Vue({
                 .then(res => {
                     
                     this.servicio = res.data;
-                     console.log(this.servicio);
+                     
                 })
                 .catch(error => {
                     console.log(error);
@@ -85,7 +85,7 @@ var app = new Vue({
         axios.post(url)
                 .then(res => {
                     this.zonas = res.data;
-                    console.log(this.zonas);
+                   
                 })
                 .catch(error => {
                     console.log(error);
@@ -98,7 +98,7 @@ var app = new Vue({
         
         this.editarModal = s;
         
-        console.log(this.Modal);
+        
         //open modal
         
         
@@ -140,7 +140,7 @@ var app = new Vue({
              .then(resp =>{
                  o = resp.data;
                  M.toast({html: o.value});
-                 this.joinMo();
+                 this.joinServicios();
                  var elems = document.querySelector('.modal');
                  var instances = M.Modal.init(elems);
                  instance.close();
