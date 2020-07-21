@@ -50,7 +50,7 @@ var app = new Vue({
       //}
 
       // You should have a server side REST API
-      axios.post('http://localhost/Tecnobella/index.php/welcome/insertar_servicio',
+      axios.post('http://localhost:81/Tecnobella/index.php/welcome/insertar_servicio',
           formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -69,7 +69,7 @@ var app = new Vue({
       console.log('>>>> 1st element in files array >>>> ', this.user_file);
     },
     joinServicios: function () {
-        url = "http://localhost/Tecnobella/index.php/welcome/joinServicios";
+        url = "http://localhost:81/Tecnobella/index.php/welcome/joinServicios";
         axios.post(url)
                 .then(res => {
                     
@@ -81,7 +81,7 @@ var app = new Vue({
                 });
     },
     zona: function () {
-        url = "http://localhost/Tecnobella/index.php/welcome/zona";
+        url = "http://localhost:81/Tecnobella/index.php/welcome/zona";
         axios.post(url)
                 .then(res => {
                     this.zonas = res.data;
@@ -109,7 +109,7 @@ var app = new Vue({
     },
     eliminar_servicio: function (s) {
         if (confirm("Estas seguro de eliminar el servicio " + s.nombre_servicio + "?")) {
-            url = "http://localhost/Tecnobella/index.php/welcome/eliminar_servicio";
+            url = "http://localhost:81/Tecnobella/index.php/welcome/eliminar_servicio";
             param = new FormData();
             param.append("id_servicio", s.id_servicio);
             axios.post(url, param)
@@ -126,7 +126,7 @@ var app = new Vue({
     },
 
     actualizar_servicio:function(){
-     url="http://localhost/Tecnobella/index.php/welcome/actualizar_servicio";
+     url="http://localhost:81/Tecnobella/index.php/welcome/actualizar_servicio";
 
      let formData = new FormData();
      formData.append('user_file', this.user_file);

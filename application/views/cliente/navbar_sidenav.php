@@ -37,7 +37,7 @@
                 <i class="material-icons right">arrow_drop_down</i>
               </a>
               <ul id="id_drop" class="dropdown-content white-text">
-                <li><a class="white-text" href="#">Depilación Mujer</a></li>
+                  <li><a class="white-text" href="A">Depilación Mujer</a></li>
                 <li class="divider"></li>
                 <li><a class="white-text" href="#">Depilación hombre</a></li>
                 <li class="divider"></li>
@@ -47,8 +47,8 @@
 <li class=""><a href="">Dermatología</a></li>
 <li class=""><a href="">Traumatología</a></li>
 
-                <li><a href="">Ofertas</a></li>
-                <li class=""><a href="" class="right-align"><i class="material-icons medium right" style="padding-left: 30px;">shopping_cart</i>Mi Carrito de Compras</a></li>
+                <li><a href="<?= site_url() ?>Ofertas">Ofertas</a></li>
+                <li class=""><a href=""><i class="large material-icons blue-text text-darken-2">shopping_cart</i></a></li>
               </ul>
             </div>
           </nav>
@@ -57,11 +57,11 @@
             <li class="active"><a href="">Inicio</a></li>
             <li class="divider"></li>
             <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop" style="height:100% ">
+              <a href="#" class="dropdown-trigger" data-target="id_drop2" style="height:100% ">
                 Depilación Multilaser
                 <i class="material-icons right">arrow_drop_down</i>
               </a>
-              <ul id="id_drop" class="dropdown-content white-text">
+              <ul id="id_drop2" class="dropdown-content white-text">
                 <li><a class="white-text" href="#">Depilación Mujer</a></li>
                 <li class="divider"></li>
                 <li><a class="white-text" href="#">Depilación hombre</a></li>
@@ -73,9 +73,9 @@
             <li class="divider"></li>
             <li class=""><a href="">Traumatología</a></li>
             <li class="divider"></li>
-            <li><a href="">Ofertas</a></li>
+            <li><a href="<?= site_url() ?>Ofertas">Ofertas</a></li>
             <li class="divider"></li>
-            <li class=""><a href="">Mi Carrito de Compras</a><i class="material-icons medium blue-text text-darken-2" style="padding-left: 30px;">shopping_cart</i></li>
+            <li class=""><a href=""><i class="large material-icons blue-text text-darken-2">shopping_cart</i></a></li>
             <li class="divider"></li>
           </ul>
         </div>

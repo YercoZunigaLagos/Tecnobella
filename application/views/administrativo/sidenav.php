@@ -1,5 +1,5 @@
 <nav>
-    <div class="nav-wrapper green lighten-1">
+    <div class="nav-wrapper" style="background: linear-gradient(45deg, #1400ff , #00ffbd);">
         <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
         <a href="#!" class="brand-logo">Tecnobella</a>
 
@@ -41,13 +41,8 @@
 
     <li><a class="">Gestión de Servicios</a></li>
     <hr>
-    <!-- Vista perfil-->
-    <?php if ($this->session->userdata('vista_perfil') == 1): ?>
-        <li><a  class="waves-effect"  href="<?= site_url() ?>Perfiles"><i class="material-icons black-text">show_chart</i>Perfiles</a></li>
-    <?php else: ?>
-        <li><a style="color:#e0e0e0;cursor:pointer; cursor:hand;"><i style="color:#e0e0e0" class="material-icons">show_chart</i>Perfiles</a></li>
-
-    <?php endif; ?>
+    
+   
     <!--  Vista servicios -->
     <?php if ($this->session->userdata('vista_servicios') == 1): ?>
         <li><a class="waves-effect"  href="<?= site_url() ?>Servicios"><i class="material-icons">input</i>Servicios</a></li>
@@ -56,28 +51,25 @@
 
     <?php endif; ?>
     <?php if ($this->session->userdata('vista_cliente') == 1): ?>
-        <li><a class="waves-effect"  href="<?= site_url() ?>Servicios"><i class="material-icons">input</i>Pacientes</a></li>
+        <li><a class="waves-effect"  href="<?= site_url() ?>Clientes"><i class="material-icons">ballot</i>Clientes</a></li>
     <?php else: ?>
-        <li><a style="color:#e0e0e0;cursor:pointer; cursor:hand;"><i style="color:#e0e0e0" class="material-icons">show_chart</i>Pacientes</a></li>
+        <li><a style="color:#e0e0e0;cursor:pointer; cursor:hand;"><i style="color:#e0e0e0" class="material-icons">ballot</i>Clientes</a></li>
 
     <?php endif; ?>
-
-
-
 
     <hr>
     <li><a class="">Gestión de Usuarios</a></li>
     <hr>
     <!-- Vista perfil-->
     <?php if ($this->session->userdata('vista_usuario') == 1): ?>
-        <li><a  class="waves-effect"  href="<?= site_url() ?>Perfiles"><i class="material-icons black-text">show_chart</i>Usuarios</a></li>
+        <li><a  class="waves-effect"  href="<?= site_url() ?>Usuarios"><i class="material-icons black-text">show_chart</i>Usuarios</a></li>
     <?php else: ?>
         <li><a style="color:#e0e0e0;cursor:pointer; cursor:hand;"><i style="color:#e0e0e0" class="material-icons">show_chart</i>Usuarios</a></li>
 
     <?php endif; ?>
     <!--  Vista servicios -->
-    <?php if ($this->session->userdata('vista_perfil') == 1): ?>
-        <li><a class="waves-effect"  href="<?= site_url() ?>Servicios"><i class="material-icons">input</i>Roles</a></li>
+    <?php if ($this->session->userdata('vista_perfil') == 4): ?>
+        <li><a class="waves-effect"  href="<?= site_url() ?>Roles"><i class="material-icons">input</i>Roles</a></li>
     <?php else: ?>
         <li><a style="color:#e0e0e0;cursor:pointer; cursor:hand;"><i style="color:#e0e0e0" class="material-icons">show_chart</i>Roles</a></li>
 
@@ -133,7 +125,7 @@
 <br><br>
     <?php if ($this->session->userdata('id_usuario')): ?>
 
-        <li><a class="waves-effect left"  href="<?= base_url() ?>welcome/cerrar_sesion"><i class=" material-icons red-text">power_settings_new</i>Desconectarse</a></li>
+        <li><a class="waves-effect left"  href="< ?= base_url() ?>welcome/cerrar_sesion"><i class=" material-icons red-text">power_settings_new</i>Desconectarse</a></li>
         <br>
         <br>
         <br>
@@ -141,4 +133,5 @@
 
         <?php redirect(site_url("Login")) ?>
     <?php endif; ?>
+    
 </ul>

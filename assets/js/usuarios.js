@@ -11,7 +11,7 @@ var app = new Vue({
 
     vista: [],
     roles: [],
-    selecte: [],
+    selected_vistas: [],
     selecte2: [],
     subrol:[
       {
@@ -54,7 +54,7 @@ var app = new Vue({
       console.log('>> formData >> ', ...formData);
 
       // You should have a server side REST API
-      axios.post('http://localhost/Administrativo/index.php/welcome/insertar_rol',
+      axios.post('http://localhost:81/Tecnobella/index.php/welcome/insertar_rol',
           formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -70,7 +70,7 @@ var app = new Vue({
         });
     },
     joinRoles: function () {
-        url = "http://localhost/Administrativo/index.php/welcome/joinRoles";
+        url = "http://localhost:81/Tecnobella/index.php/welcome/joinRoles";
         axios.post(url)
                 .then(res => {
 
@@ -81,7 +81,7 @@ var app = new Vue({
                 });
     },
     vistas: function () {
-        url = "http://localhost/Administrativo/index.php/welcome/vista";
+        url = "http://localhost:81/Tecnobella/index.php/welcome/vista";
         axios.post(url)
                 .then(res => {
                     this.vista = res.data;

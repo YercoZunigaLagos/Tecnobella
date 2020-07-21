@@ -31,9 +31,22 @@ class Vistas extends CI_Controller {
     public function Usuarios(){
           $this->load->view("administrativo/usuario");
     }
+    public function Roles(){
+          $this->load->view("administrativo/Roles");
+    }
+    public function Clientes(){
+          $this->load->view("administrativo/cliente");
+    }
     public function Login(){
           $this->load->view("administrativo/login");
     }
+    public function Carrito(){
+          $this->load->view("cliente/carrito");
+    }
+    public function Ofertas(){
+          $this->load->view("cliente/ofertas");
+    }
+   
 
 
 

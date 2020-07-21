@@ -18,7 +18,7 @@ new Vue({
     methods: {
 
         iniciar_sesion: function () {
-            url = "http://localhost/Tecnobella/index.php/welcome/iniciar_sesion";
+            url = "http://localhost:81/Tecnobella/index.php/welcome/iniciar_sesion";
             param = new FormData();
             param.append("email_usuario", this.email_usuario);
             param.append("contraseña_usuario", this.contraseña_usuario);

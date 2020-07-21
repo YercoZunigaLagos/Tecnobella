@@ -24,7 +24,7 @@
                 <div class="col l5 m12 s12" style="margin-top: 5%">
                     <div class="card-panel z-depth-3">
                       <div class="row">
-                        <h4 class="black-text" style="font-weight: 900">Agregar Usuario</h4>
+                        <h4 class="black-text" style="font-weight: 900">Agregar Rol</h4>
                         <div class="row">
                           <div class="col l6 s12 m6">
                             <div class="input-field col s12 l12">
@@ -56,7 +56,7 @@
                           <div class="col l6 s12 m6">
 
                             <div class="col s12 l12 right">
-                              <v-select id="nombre_vista" label="nombre_vista" v-model="selected_vistas" :options="vista" placeholder="Seleccione la(s) vista(s)"></v-select>
+                              <v-select id="nombre_vista" label="nombre_vista" v-model="selecte" :options="vista" placeholder="Seleccione la(s) vista(s)"></v-select>
                               <label for="nombre_vista">Seleccione la(s) vista(s)</label>
                              </div>
 
@@ -199,3 +199,4 @@
         </script-->
     </body>
 </html>
+

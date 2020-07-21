@@ -24,10 +24,11 @@
             <div class="row">
                 <div class="col l5 m12 s12" style="margin-top: 5%">
                     <div class="card-panel z-depth-3">
+                         <h4 class="black-text" style="font-weight: 900">Agregar Servicio</h4>
                         <div class="row">
-                            <div class="row">
+                           
                                 <div class="col l12 s12 m6">
-                                    <h4 class="black-text" style="font-weight: 900">Agregar Servicio</h4>
+                                   
 
                                     <div class="input-field col s12 l6">
                                         <i class="material-icons prefix">comment</i>
@@ -40,7 +41,7 @@
                                         <label for="valor">Precio</label>
                                     </div>
                                 </div>
-                            </div>
+                           
                             <div class="row">
                                 <div class="col l12 s12 m6">
                                     <div class="input-field col s12">
@@ -65,7 +66,7 @@
                                 <div class="file-field input-field">
                                     <div class="btn">
                                         <span>Imagen</span>
-                                        <input type="file" id="user_file" ref="user_file" onchange="readURL(this);" v-on:change="handleFileUpload()">
+                                        <input type="file" id="user_file"  ref="user_file" onchange="readURL(this);" v-on:change="handleFileUpload()">
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text" placeholder="Ninguna Imagen seleccionada">
@@ -99,7 +100,7 @@
                             </div>
                         </div>
                         <div class="hide" id="contenido">
-                            <table class="bordered highlight" id="tablePerfil">
+                            <table class="bordered highlight" id="tableServicio">
                             <tr>
                                 <th class="hide">ID</th>
                                 <th class="center">Imagen</th>
@@ -108,7 +109,7 @@
                                 <th class="center">Genero</th>
                                 <th class="center">Valor</th>
                                 <th class="center">Descripcion</th>      
-                                <th class="center">Editar</th>
+                                
                                 <th class="center">Eliminar</th>
                             </tr>
                             <tbody>
@@ -123,9 +124,7 @@
                                     <td>{{s.valor}}</td>
                                     <td>{{s.descripcion}}</td>
                                     
-                                    <td>
-                                        <button class="btn-floating yellow" @click="cargarModal(s)"><i class="material-icons">edit</i></button>
-                                    </td>
+                                   
                                     <td>
                                         <button class="btn-floating red" @click="eliminar_servicio(s)"><i class="material-icons">delete</i></button>
                                     </td>

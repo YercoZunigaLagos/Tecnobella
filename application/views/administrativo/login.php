@@ -23,7 +23,7 @@
                         <div class="card-panel">
                             <div class="hide" id="contenido">
                                 <div class="row center-align">
-                                    <img src="http://tecnobella.com/wp-content/uploads/2019/08/Logo-Tecno-Bella-872x1024.png" class=" center-align" alt="" height="50%" width="50%">
+                                    <img src="http://localhost:81/Tecnobella/assets/img/Logo Tecno Bella.png" class=" center-align" alt="" height="50%" width="50%">
                                 </div>
 
 

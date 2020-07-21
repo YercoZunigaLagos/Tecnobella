@@ -10,4 +10,3 @@
 <link type="text/css" rel="stylesheet" href="<?= base_url() ?>assets/css/diseños_div.css"  media="screen,projection"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 <link rel="stylesheet" href="<?= base_url() ?>floating-whatsapp-master/floating-wpp.min.css">
-  

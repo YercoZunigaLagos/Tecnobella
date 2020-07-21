@@ -13,4 +13,4 @@
       <script src="https://unpkg.com/vue-select@3.0.0"></script>
       
       <script src="<?= base_url() ?>floating-whatsapp-master/floating-wpp.min.js" type="text/javascript"></script>
-    
+      <script src="https://cdn.jsdelivr.net/npm/vue-number-input-spinner@2.2.0/dist/vue-number-input-spinner.min.js"></script>
